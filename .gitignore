@@ -1,0 +1,4 @@
+/venv
+.DS_Store
+.env
+csv_validation.log

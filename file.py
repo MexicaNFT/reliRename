@@ -1,6 +1,10 @@
 import csv
 import os
 
+csv_file_path = "/Users/pridapablo/Downloads/csv.csv"  # Replace with your CSV file path
+text_column = "text"
+id_column = "Id"
+file_directory = "/Users/pridapablo/Downloads/CLEAN_TXT"  # Replace with the directory where your .txt files are stored
 
 def rename_files(csv_file_path, text_column, id_column, file_directory):
 
@@ -24,9 +28,7 @@ def rename_files(csv_file_path, text_column, id_column, file_directory):
 
             if os.path.exists(old_file_path):
                 try:
-
                     os.rename(old_file_path, new_file_path)
-                    print(f"Renamed: {old_filename} -> {new_filename}")
                     used_ids.add(new_id)
                 except Exception as e:
                     print(f"Error renaming {old_filename}: {str(e)}")
@@ -40,15 +42,10 @@ def verify_renaming(file_directory, id_column, csv_reader):
         new_filename = f"{row[id_column]}.txt"
         new_file_path = os.path.join(file_directory, new_filename)
         if os.path.exists(new_file_path):
-            print(f"File exists: {new_filename}")
+            continue
         else:
             print(f"File missing: {new_filename}")
 
-
-csv_file_path = "/Users/sushant/Downloads/newtest - In Production Embedding Sets - Compendio Leyes Federales.csv"  # Replace with your CSV file path
-text_column = "text"
-id_column = "Id"
-file_directory = "/Users/sushant/Downloads/Lyes"  # Replace with the directory where your .txt files are stored
 
 rename_files(csv_file_path, text_column, id_column, file_directory)
 
