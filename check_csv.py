@@ -4,7 +4,7 @@ from datetime import datetime
 import re
 import logging
 import boto3
-from botocore.exceptions import NoCredentialsError, ClientError
+from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 from tqdm import tqdm  # Import the tqdm library for progress bars
 
