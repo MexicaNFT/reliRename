@@ -9,19 +9,9 @@ from tqdm import tqdm  # Import tqdm for progress bars
 # Load environment variables from .env file
 load_dotenv()
 
-# Set up logging for errors to file
-file_logger = logging.getLogger('file_logger')
-file_handler = logging.FileHandler('dynamo_s3_check.log')
-file_handler.setLevel(logging.ERROR)
-file_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s:%(message)s'))
-file_logger.addHandler(file_handler)
-
-# Set up logging for debug info to console
-console_logger = logging.getLogger('console_logger')
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
-console_handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s:%(message)s'))
-console_logger.addHandler(console_handler)
+# Setup logging for both INFO and ERROR levels
+logging.basicConfig(filename='dynamo_s3_check.log', level=logging.ERROR, 
+                    format='%(asctime)s %(levelname)s:%(message)s')
 
 # AWS credentials and table name from .env
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -29,6 +19,9 @@ AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_REGION = os.getenv('AWS_DEFAULT_REGION')
 TABLE_NAME = os.getenv('DYNAMODB_TABLE_NAME')
 S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME')
+
+# Define the folder path containing the CSV files
+csv_folder_path = "../../csv_done"
 
 # Initialize DynamoDB and S3 resources
 dynamodb = boto3.resource(
@@ -47,14 +40,6 @@ s3 = boto3.client(
 # Access the DynamoDB table
 table = dynamodb.Table(TABLE_NAME)
 
-# Function to log errors to file
-def log_file_error(csv_file_name, row_num, message):
-    file_logger.error(f"File: {csv_file_name}, Row: {row_num} - {message}")
-
-# Function to log info to console
-def log_console_info(message):
-    console_logger.info(message)
-
 # Function to check if a file exists in the "txt" folder in S3
 def check_file_in_s3(filename):
     try:
@@ -64,13 +49,12 @@ def check_file_in_s3(filename):
         return True
     except ClientError as e:
         if e.response['Error']['Code'] == '403':
-            log_console_info(f"Access denied to S3 for file: {filename}")
-            log_file_error("N/A", "N/A", f"Access denied to S3 for file: {filename}")
+            logging.error(f"Access denied to S3 for file: {filename}")
         elif e.response['Error']['Code'] == '404':
+            logging.error(f"Missing file in S3: {filename}.txt")
             return False
         else:
-            log_console_info(f"Error checking S3 for file {filename}: {e}")
-            log_file_error("N/A", "N/A", f"Error checking S3 for file {filename}: {e}")
+            logging.error(f"Error checking S3 for file {filename}: {e}")
         return False
 
 # Function to check existence in DynamoDB and S3
@@ -96,24 +80,18 @@ def check_existence(csv_folder_path):
                     response = table.get_item(Key={'id': law_id})
 
                     if 'Item' not in response:
-                        log_console_info(f"Missing in DynamoDB: {law_id}")
-                        log_file_error(csv_file_name, row_num, f"Missing in DynamoDB: {law_id}")
+                        logging.error(f"File: {csv_file_name}, Row: {row_num} - Missing in DynamoDB: {law_id}")
                     else:
-                        log_console_info(f"Found in DynamoDB: {law_id}")
+                        logging.info(f"File: {csv_file_name}, Row: {row_num} - Found in DynamoDB: {law_id}")
 
                     # Check S3 for the corresponding file
                     if not check_file_in_s3(law_id):
-                        log_console_info(f"Missing file in S3: {law_id}.txt")
-                        log_file_error(csv_file_name, row_num, f"Missing file in S3: {law_id}.txt")
+                        logging.error(f"File: {csv_file_name}, Row: {row_num} - Missing file in S3: {law_id}.txt")
                     else:
-                        log_console_info(f"Found file in S3: {law_id}.txt")
+                        logging.info(f"File: {csv_file_name}, Row: {row_num} - Found file in S3: {law_id}.txt")
 
                 except Exception as e:
-                    log_console_info(f"Error checking law ID: {law_id}: {e}")
-                    log_file_error(csv_file_name, row_num, f"Error checking law ID: {law_id}: {e}")
-
-# Define the folder path containing the CSV files
-csv_folder_path = "./csv_done"
+                    logging.error(f"File: {csv_file_name}, Row: {row_num} - Error checking law ID: {law_id}: {e}")
 
 # Run the check
 check_existence(csv_folder_path)
