@@ -1,30 +1,84 @@
-### FILE 4.csv
-2024-10-04 20:16:15,095 ERROR:File: ./csv/4.csv, Row: 51 - Invalid date format: 31/11/2006
-
-
-Error creating law or compendium-law relationship: REGLAMENTO DE LA LEY DEL INSTITUTO DEL FONDO NACIONAL PARA EL CONSUMO DE LOS TRABAJADORES {
-  data: null, 4.00051.txt
+### File 10
+Created law: PROY-NMX-EC-17034-IMNC-2017, ID: 10.02558
+Error creating law or compendium-law relationship: PROY-NMX-EC-17034-IMNC-2017 {
+  data: {},
   errors: [
-    {
-      path: null,
-      locations: [Array],
-      message: "Variable 'lastReformDate' has an invalid value."
+    UnauthorizedException: Unknown error
+        at buildRestApiError (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/serviceError.mjs:93:26)
+        at parseRestApiServiceError (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/serviceError.mjs:30:16)
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async job (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/createCancellableOperation.mjs:35:23)
+        at async GraphQLAPIClass._graphql (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-graphql/dist/esm/internals/InternalGraphQLAPI.mjs:265:44)
+        at async runWithAmplifyServerContext (webpack-internal:///(rsc)/./node_modules/aws-amplify/dist/esm/adapter-core/runWithAmplifyServerContext.mjs:25:24)
+        at async POST (webpack-internal:///(rsc)/./src/app/api/upload/route.ts:91:17)
+        at async /Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:55759
+        at async eO.execute (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46527)
+        at async eO.handle (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57093)
+        at async doRender (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1345:42)
+        at async cacheEntry.responseCache.get.routeKind (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1567:28)
+        at async DevServer.renderToResponseWithComponentsImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1475:28)
+        at async DevServer.renderPageComponent (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1901:24)
+        at async DevServer.renderToResponseImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1939:32)
+        at async DevServer.pipeImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:914:25)
+        at async NextNodeServer.handleCatchallRenderRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/next-server.js:272:17)
+        at async DevServer.handleRequestImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:810:17)
+        at async /Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+        at async Span.traceAsyncFn (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/trace/trace.js:154:20)
+        at async DevServer.handleRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+        at async invokeRender (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:173:21)
+        at async handleRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:350:24)
+        at async requestHandlerImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:374:13)
+        at async Server.requestListener (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/start-server.js:141:13) {
+      recoverySuggestion: `If you're calling an Amplify-generated API, make sure to set the "authMode" in generateClient({ authMode: '...' }) to the backend authorization rule's auth provider ('apiKey', 'userPool', 'iam', 'oidc', 'lambda')`
     }
   ]
 }
+Error creating law or compendium-law relationship: PROY-NMX-FF-035-SCFI-2017 {
+  data: {},
+  errors: [
+    UnauthorizedException: Unknown error
+        at buildRestApiError (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/serviceError.mjs:93:26)
+        at parseRestApiServiceError (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/serviceError.mjs:30:16)
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+        at async job (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-rest/dist/esm/utils/createCancellableOperation.mjs:35:23)
+        at async GraphQLAPIClass._graphql (webpack-internal:///(rsc)/./node_modules/@aws-amplify/api-graphql/dist/esm/internals/InternalGraphQLAPI.mjs:265:44)
+        at async runWithAmplifyServerContext (webpack-internal:///(rsc)/./node_modules/aws-amplify/dist/esm/adapter-core/runWithAmplifyServerContext.mjs:25:24)
+        at async POST (webpack-internal:///(rsc)/./src/app/api/upload/route.ts:66:29)
+        at async /Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:55759
+        at async eO.execute (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46527)
+        at async eO.handle (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57093)
+        at async doRender (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1345:42)
+        at async cacheEntry.responseCache.get.routeKind (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1567:28)
+        at async DevServer.renderToResponseWithComponentsImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1475:28)
+        at async DevServer.renderPageComponent (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1901:24)
+        at async DevServer.renderToResponseImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:1939:32)
+        at async DevServer.pipeImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:914:25)
+        at async NextNodeServer.handleCatchallRenderRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/next-server.js:272:17)
+        at async DevServer.handleRequestImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/base-server.js:810:17)
+        at async /Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+        at async Span.traceAsyncFn (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/trace/trace.js:154:20)
+        at async DevServer.handleRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+        at async invokeRender (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:173:21)
+        at async handleRequest (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:350:24)
+        at async requestHandlerImpl (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/router-server.js:374:13)
+        at async Server.requestListener (/Users/pridapablo/DEV/MNFT/Reli/reliNew/reliAdmin/node_modules/next/dist/server/lib/start-server.js:141:13) {
+      recoverySuggestion: `If you're calling an Amplify-generated API, make sure to set the "authMode" in generateClient({ authMode: '...' }) to the backend authorization rule's auth provider ('apiKey', 'userPool', 'iam', 'oidc', 'lambda')`
+    }
+  ]
+}
+Created law: PROY-NMX-B-521-CANACERO-2017, ID: 10.02560
 
-FIX NAMES:
-Created law:  Arrendamientos y Servicios del Sector Público.doc.txt", ID: 4.00005
-Created law:  en Materia de Administración y Enajenación de Bienes Adjudicados con Motivo de la Aplicación del Procedimiento Administrativo de Ejecución.doc.txt", ID: 4.00053
-Created law:  en Materia de Aportaciones.doc.txt", ID: 4.00059
-Created law:  Certificación y Comercio de Semillas.doc.txt", ID: 4.00069
-Created law:  Artísticos e Históricos.doc.txt", ID: 4.00085
-Created law:  Niños y Adolescentes.doc.txt", ID: 4.00093
-Created law:  Cuidado y Desarrollo Integral Infantil.doc.txt", ID: 4.00095
-Created law:  Tejidos y Cadáveres de Seres Humanos.doc.txt", ID: 4.00098
-Created law:  Investigación y uso Medicinal de la Cannabis y sus Derivados Farmacológicos.doc.txt", ID: 4.00099
-Created law:  Sancionar y Erradicar los Delitos en Materia de Trata de Personas y Para la Protección y Asistencia a las Víctimas de Estos Delitos.doc.txt", ID: 4.00120
-Created law:  Pequeña y Mediana Empresa.doc.txt", ID: 4.00125
-Created law:  Ganadería y Avicultura.doc.txt", ID: 4.00128
-Created law:  Torio y las Demás Substancias de las Cuales se Obtengan Isótopos Hendibles que Puedan Producir Energía Nuclear.doc.txt", ID: 4.00129
-Created law:  Relativo al Ejercicio de las Profesiones en la Ciudad de México.doc.txt", ID: 4.00130
+### File 11
+SEE IF THE FOLLOWING SHOULD BE ADDED TO THE COMPENDIUM # 11:
+Circular Telefax E-10_98.txt 
+Circular 1677_1969.txt
+Circular 1709_1971.txt
+Circular 1756_1973.txt
+Circular 1769_1973.txt
+Circular 1806_1975.txt
+Circular 1839_1978.txt
+Circular 1841_1979.txt
+Circular 1847_1979.txt
+Circular 1861_1980.txt
+Circular 1862_1980.txt
+Circular 1874_1981.txt
