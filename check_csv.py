@@ -83,7 +83,7 @@ def process_csv_file(filepath):
 
         # Check if all expected columns exist
         missing_columns = [col for col in EXPECTED_COLUMNS if col not in df.columns]
-        if missing_columns:
+        if (missing_columns):
             logging.error(f"File: {filepath} - Missing columns: {', '.join(missing_columns)}")
             return
         
@@ -106,11 +106,19 @@ def process_csv_file(filepath):
                 if iso_date:
                     df.at[index, 'last_reform_date'] = iso_date
 
-            # Check title (must be in all caps)
+           # Check title (must be in all caps, replace all types of whitespace with single space)
             if pd.isna(row['title']):
                 logging.error(f"File: {filepath}, Row: {index + 1} - Missing title")
-            elif row['title'] != row['title'].upper():
-                df.at[index, 'title'] = row['title'].upper()
+            else:
+                # Remove all newlines, tabs, and multiple spaces, including non-breaking spaces
+                title_cleaned = row['title'].replace('\n', ' ')  # Replace newline with space
+                title_cleaned = re.sub(r'\s+', ' ', title_cleaned).strip()  # Replace all whitespace (tabs, multiple spaces)
+
+                # Convert the title to uppercase
+                if title_cleaned != title_cleaned.upper():
+                    df.at[index, 'title'] = title_cleaned.upper()
+                else:
+                    df.at[index, 'title'] = title_cleaned
 
             # Check Id (should be a float with exactly five decimal places)
             if pd.isna(row['Id']):

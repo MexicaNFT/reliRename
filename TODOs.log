@@ -1,0 +1,30 @@
+### FILE 4.csv
+2024-10-04 20:16:15,095 ERROR:File: ./csv/4.csv, Row: 51 - Invalid date format: 31/11/2006
+
+
+Error creating law or compendium-law relationship: REGLAMENTO DE LA LEY DEL INSTITUTO DEL FONDO NACIONAL PARA EL CONSUMO DE LOS TRABAJADORES {
+  data: null, 4.00051.txt
+  errors: [
+    {
+      path: null,
+      locations: [Array],
+      message: "Variable 'lastReformDate' has an invalid value."
+    }
+  ]
+}
+
+FIX NAMES:
+Created law:  Arrendamientos y Servicios del Sector Público.doc.txt", ID: 4.00005
+Created law:  en Materia de Administración y Enajenación de Bienes Adjudicados con Motivo de la Aplicación del Procedimiento Administrativo de Ejecución.doc.txt", ID: 4.00053
+Created law:  en Materia de Aportaciones.doc.txt", ID: 4.00059
+Created law:  Certificación y Comercio de Semillas.doc.txt", ID: 4.00069
+Created law:  Artísticos e Históricos.doc.txt", ID: 4.00085
+Created law:  Niños y Adolescentes.doc.txt", ID: 4.00093
+Created law:  Cuidado y Desarrollo Integral Infantil.doc.txt", ID: 4.00095
+Created law:  Tejidos y Cadáveres de Seres Humanos.doc.txt", ID: 4.00098
+Created law:  Investigación y uso Medicinal de la Cannabis y sus Derivados Farmacológicos.doc.txt", ID: 4.00099
+Created law:  Sancionar y Erradicar los Delitos en Materia de Trata de Personas y Para la Protección y Asistencia a las Víctimas de Estos Delitos.doc.txt", ID: 4.00120
+Created law:  Pequeña y Mediana Empresa.doc.txt", ID: 4.00125
+Created law:  Ganadería y Avicultura.doc.txt", ID: 4.00128
+Created law:  Torio y las Demás Substancias de las Cuales se Obtengan Isótopos Hendibles que Puedan Producir Energía Nuclear.doc.txt", ID: 4.00129
+Created law:  Relativo al Ejercicio de las Profesiones en la Ciudad de México.doc.txt", ID: 4.00130
